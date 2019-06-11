@@ -39,7 +39,7 @@ Park.prototype.findBySpecies = function(species) {
 }
 
 Park.prototype.removeAllBySpecies = function(species) {
-  for (dinosaur of this.dinosaurs) {
+  for (let dinosaur of this.dinosaurs) {
     if (dinosaur.species === species) {
       index = this.dinosaurs.indexOf(dinosaur);
       this.dinosaurs.splice(index, 1);
@@ -49,11 +49,9 @@ Park.prototype.removeAllBySpecies = function(species) {
 
 Park.prototype.dietTypes = function() {
   result = {}
-  for (dinosaur of this.dinosaurs) {
-    result[dinosaur.diet] = 0;
-  }
-  for (dinosaur of this.dinosaurs) {
-    result[dinosaur.diet] += 1;
+  for (let dinosaur of this.dinosaurs) {
+    let diet = dinosaur.diet;
+    result.hasOwnProperty(diet) ? result[diet] += 1 : result[diet] = 1
   }
   return result
 }
