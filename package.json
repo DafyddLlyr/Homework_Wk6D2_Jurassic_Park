@@ -1,7 +1,6 @@
 {
   "name": "hw_fundamentals_jurassic_park_end",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "mocha specs"
@@ -10,6 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.1.1"
-  }
+    "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DafyddLlyr/Homework_Wk6D2_Jurassic_Park.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DafyddLlyr/Homework_Wk6D2_Jurassic_Park/issues"
+  },
+  "homepage": "https://github.com/DafyddLlyr/Homework_Wk6D2_Jurassic_Park#readme",
+  "description": ""
 }
