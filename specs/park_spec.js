@@ -41,9 +41,21 @@ describe('Park', function() {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function() {
-    const actual = park.bestDinosaur();
-    assert.strictEqual(actual, dino1)
+    assert.strictEqual(park.bestDinosaur(), dino1)
   });
+
+  it('should be able to calculate the total number of visits per day', function() {
+    assert.strictEqual(park.visitsPerDay(), 70);
+  })
+
+  it('should be able to calculate the total number of visitors per year', function() {
+    assert.strictEqual(park.visitsPerYear(), 25550);
+  })
+
+  it('should be able to calculate the total revenue from ticket sales for one year', function() {
+    assert.strictEqual(park.yearlyRevenue(), 255500)
+  })
+
 
   it('should be able to find all dinosaurs of a particular species', function() {
     const actual = park.findBySpecies('stegosaurus');
@@ -55,5 +67,7 @@ describe('Park', function() {
     park.removeAllBySpecies('t-rex');
     assert.deepStrictEqual(actual, [dino2])
   });
+
+  it('should be able to provide an object containing each of the diet types and the number of dinosaurs in the park of that diet type')
 
 });
