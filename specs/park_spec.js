@@ -56,7 +56,6 @@ describe('Park', function() {
     assert.strictEqual(park.yearlyRevenue(), 255500)
   })
 
-
   it('should be able to find all dinosaurs of a particular species', function() {
     const actual = park.findBySpecies('stegosaurus');
     assert.deepStrictEqual(actual, [dino2])
@@ -68,6 +67,10 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [dino2])
   });
 
-  it('should be able to provide an object containing each of the diet types and the number of dinosaurs in the park of that diet type')
+  it('should be able to provide an object containing each of the diet types and the number of dinosaurs in the park of that diet type', function() {
+    park.addDinosaur(dino3)
+    let expected = {"carnivore": 1, "herbivore": 2}
+    assert.deepStrictEqual(park.dietTypes(), expected)
+  })
 
 });

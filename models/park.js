@@ -47,4 +47,15 @@ Park.prototype.removeAllBySpecies = function(species) {
   }
 }
 
+Park.prototype.dietTypes = function() {
+  result = {}
+  for (dinosaur of this.dinosaurs) {
+    result[dinosaur.diet] = 0;
+  }
+  for (dinosaur of this.dinosaurs) {
+    result[dinosaur.diet] += 1;
+  }
+  return result
+}
+
 module.exports = Park
