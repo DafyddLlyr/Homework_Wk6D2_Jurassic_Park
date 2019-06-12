@@ -9,19 +9,19 @@ Park.prototype.addDinosaur = function(dinosaur) {
 };
 
 Park.prototype.removeDinosaur = function(dinosaur) {
-  index = this.dinosaurs.indexOf(dinosaur);
+  const index = this.dinosaurs.indexOf(dinosaur);
   this.dinosaurs.splice(index, 1);
 }
 
 Park.prototype.bestDinosaur = function() {
-  compare = function(a, b) {
+  const compare = function(a, b) {
     return b.guestsAttractedPerDay - a.guestsAttractedPerDay;
   }
   return this.dinosaurs.sort(compare)[0];
 }
 
 Park.prototype.visitsPerDay = function() {
-  total = 0;
+  let total = 0;
   this.dinosaurs.forEach(dinosaur => total += dinosaur.guestsAttractedPerDay)
   return total;
 }
@@ -39,17 +39,17 @@ Park.prototype.findBySpecies = function(species) {
 }
 
 Park.prototype.removeAllBySpecies = function(species) {
-  for (let dinosaur of this.dinosaurs) {
+  for (const dinosaur of this.dinosaurs) {
     if (dinosaur.species === species) {
-      index = this.dinosaurs.indexOf(dinosaur);
+      let index = this.dinosaurs.indexOf(dinosaur);
       this.dinosaurs.splice(index, 1);
     }
   }
 }
 
 Park.prototype.dietTypes = function() {
-  result = {}
-  for (let dinosaur of this.dinosaurs) {
+  const result = {}
+  for (const dinosaur of this.dinosaurs) {
     let diet = dinosaur.diet;
     result.hasOwnProperty(diet) ? result[diet] += 1 : result[diet] = 1
   }
